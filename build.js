@@ -55,7 +55,8 @@ async function main() {
 
 		const { status, fields } = await server.render({
 			method: 'GET',
-			uri: route.uri
+			uri: route.uri,
+			ssrManifest
 		});
 
 		if (status != '200')
