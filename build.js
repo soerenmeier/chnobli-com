@@ -77,13 +77,13 @@ async function main() {
 		await fs.writeFile(path, html);
 	}
 
-	// console.log('router', router.routes);
+	try {
+		await fs.rm('dist-client', { force: true, recursive: true });
+	} catch (e) {}
+	try {
+		await fs.rm('dist-server', { force: true, recursive: true });
+	} catch (e) {}
 
-	// try {
-	// 	await fs.rm('dist-client', { force: true, recursive: true });
-	// } catch (e) {}
-	// try {
-	// 	await fs.rm('dist-server', { force: true, recursive: true });
-	// } catch (e) {}
+	console.log('ready in dist');
 }
 main();
