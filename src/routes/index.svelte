@@ -82,7 +82,7 @@
 					},
 					bPos
 				], 1.2),
-				ease: cubicBezier(.15,.24,.87,.65),
+				ease: cubicBezier(0,.2,1,.8),
 				duration: 550
 			})
 			.add(dotEl, {
@@ -94,7 +94,7 @@
 					},
 					lPos
 				], 1.2),
-				ease: cubicBezier(.15,.24,.87,.65),
+				ease: cubicBezier(0,.2,1,.8),
 				duration: 500
 			})
 			.add(dotEl, {
@@ -106,7 +106,7 @@
 					},
 					iPos
 				], 1.2),
-				ease: cubicBezier(.15,.24,.87,.65),
+				ease: cubicBezier(0,.2,1,.8),
 				width: iOffset.width,
 				height: iOffset.height,
 				duration: 550
@@ -147,7 +147,7 @@
 		const end = {
 			x: window.innerWidth * .5,
 			y: window.innerHeight * 1.5
-		}
+		};
 
 		const minDiameter = Math.max(window.innerWidth, window.innerHeight);
 
