@@ -12,28 +12,27 @@ async function createServer() {
 
 	const vite = await createViteServer({
 		server: { middlewareMode: true },
-		appType: 'custom'
+		appType: 'custom',
 	});
 
 	app.use(vite.middlewares);
 
 	app.use('*', async (req, res, next) => {
-		const url = req.originalUrl;
+		const uri = req.originalUrl;
+		const host = req.get('host');
+		const url = new URL(uri, `http://${host}`);
 
 		try {
 			// 1. Read index.html
-			let template = fs.readFileSync(
-				'./index.html',
-				'utf-8'
-			);
+			let template = fs.readFileSync('./index.html', 'utf-8');
 
-			template = await vite.transformIndexHtml(url, template);
+			template = await vite.transformIndexHtml(uri, template);
 
-			const { render } = await vite.ssrLoadModule('./src/server.js');
+			const { render } = await vite.ssrLoadModule('./src/server.ts');
 
 			const { status, fields } = await render({
 				method: 'GET',
-				uri: url
+				url,
 			});
 
 			let html = template;

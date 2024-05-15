@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"baseUrl": ".",
+		"allowJs": true,
+		"checkJs": false,
+		"isolatedModules": true,
+		"strict": true,
+		"outDir": "./dist"
+	},
+	"include": ["src/**/*.ts"],
+	
+}

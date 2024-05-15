@@ -14,11 +14,15 @@
 		"sass": "^1.67.0",
 		"svelte": "^4.2.0",
 		"svelte-preprocess": "^5.1.1",
-		"vite": "^4.3.0"
+		"typescript": "^5.1.6",
+		"vite": "^4.3.0",
+		"prettier": "^3.2.4",
+		"tslib": "^2.6.2"
 	},
 	"dependencies": {
-		"chnobli": "^0.1.2",
-		"fire": "npm:fire-lib-js@^0.2.3",
-		"fire-svelte": "npm:fire-lib-js-svelte@^0.1.3"
+		"chnobli": "../chnobli/chnobli",
+		"chnobli-svelte": "../chnobli/chnobli-svelte",
+		"fire": "npm:fire-lib-js@^0.3.0",
+		"fire-svelte": "npm:fire-lib-js-svelte@^0.3.0-alpha.2"
 	}
 }
